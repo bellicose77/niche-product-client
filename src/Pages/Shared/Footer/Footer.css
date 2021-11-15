@@ -1,0 +1,17 @@
+.footer-container{
+    /* background-image: url("https://i.ibb.co/0Ktj2PG/national-cancer-institute-1c8sj2-IO2-I4-unsplash.jpg");
+    width: 100%;
+    height: px; */
+    background-color: rgb(83, 79, 79);
+}
+.menu{
+    list-style: none;
+    
+}
+.menu a{
+    text-decoration: none;
+   
+}
+h4,p{
+    color:white;
+}
