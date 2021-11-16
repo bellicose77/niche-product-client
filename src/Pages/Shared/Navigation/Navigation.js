@@ -20,6 +20,8 @@ const Navigation = () => {
                             Link>
                         <Nav.Link as={NavLink} to="/destination" activeStyle={activeStyle}>Explore</Nav.
                             Link>
+                        <Nav.Link as={NavLink} to="/contact" activeStyle={activeStyle}>Contact</Nav.
+                            Link>
 
 
                         <Navbar.Text>
