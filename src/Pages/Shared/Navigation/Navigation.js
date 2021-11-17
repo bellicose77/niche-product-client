@@ -22,6 +22,8 @@ const Navigation = () => {
                             Link>
                         <Nav.Link as={NavLink} to="/contact" activeStyle={activeStyle}>Contact</Nav.
                             Link>
+                        <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.
+                            Link>
 
 
                         <Navbar.Text>

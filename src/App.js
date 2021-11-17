@@ -12,6 +12,8 @@ import Contact from './Pages/Home/Contact/Contact';
 import AddServices from './Pages/AddServices/AddServices';
 import Explores from './Pages/Services/Explores/Explores';
 import Booking from './Pages/Booking/Booking/Booking';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
           </Route>
           <Route path="/details">
             <Explores></Explores>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
           </Route>
           <Route path="/booking/:serviceId">
             <Booking></Booking>
