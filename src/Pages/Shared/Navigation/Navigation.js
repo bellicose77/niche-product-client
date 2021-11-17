@@ -18,7 +18,7 @@ const Navigation = () => {
                         <Nav.Link as={NavLink} to="/Services" activeStyle={activeStyle}>Services</Nav.Link>
                         <Nav.Link as={NavLink} to="/about" activeStyle={activeStyle}>About</Nav.
                             Link>
-                        <Nav.Link as={NavLink} to="/destination" activeStyle={activeStyle}>Explore</Nav.
+                        <Nav.Link as={NavLink} to="/details" activeStyle={activeStyle}>Explore</Nav.
                             Link>
                         <Nav.Link as={NavLink} to="/contact" activeStyle={activeStyle}>Contact</Nav.
                             Link>

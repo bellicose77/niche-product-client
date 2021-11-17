@@ -10,6 +10,8 @@ import Home from './Pages/Home/Home/Home';
 import About from './Pages/Home/About/About';
 import Contact from './Pages/Home/Contact/Contact';
 import AddServices from './Pages/AddServices/AddServices';
+import Explores from './Pages/Services/Explores/Explores';
+import Booking from './Pages/Booking/Booking/Booking';
 
 function App() {
   return (
@@ -27,6 +29,12 @@ function App() {
           </Route>
           <Route path="/addservices">
             <AddServices></AddServices>
+          </Route>
+          <Route path="/details">
+            <Explores></Explores>
+          </Route>
+          <Route path="/booking/:serviceId">
+            <Booking></Booking>
           </Route>
           <Route path="/contact">
             <Contact></Contact>
