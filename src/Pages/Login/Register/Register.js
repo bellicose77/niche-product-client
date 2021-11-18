@@ -1,9 +1,11 @@
-import { Grid, TextField, Typography, Container, Button, Alert } from '@mui/material';
+import { Grid, TextField, Typography, Container, Button, Alert, CircularProgress } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
     const [loginData, setLogingData] = useState({});
+    const { registerUser, isLoading, user } = useAuth()
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -19,7 +21,8 @@ const Register = () => {
             alert("Successful form");
             return
         }
-        Alert("successfully add ");
+        registerUser(loginData.email, loginData.password);
+        // Alert("successfully add ");
         e.preventDefault();
     }
 
@@ -31,17 +34,16 @@ const Register = () => {
                         Register
                     </Typography>
                     {
-
-
+                        !isLoading &&
                         <form onSubmit={handleOnSubmit}>
-                            <TextField
-                                sx={{ width: '75%', m: 1 }}
-                                id="standard-basic"
-                                label="Your Name"
-                                name="name"
-                                onBlur={handleOnBlur}
-                                variant="standard"
-                            />
+                            {/* <TextField
+                              sx={{ width: '75%', m: 1 }}
+                              id="standard-basic"
+                              label="Your Name"
+                              name="name"
+                              onBlur={handleOnBlur}
+                              variant="standard"
+                          /> */}
                             <TextField
                                 sx={{ width: '75%', m: 1 }}
                                 id="standard-basic"
@@ -76,7 +78,9 @@ const Register = () => {
                             </Link>
 
                         </form>
+
                     }
+                    {isLoading && <CircularProgress color="secondary" />}
 
                 </Grid>
                 <Grid item xs={12} md={6}>

@@ -1,8 +1,11 @@
+import { Button } from '@mui/material';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+    const { user, logOut } = useAuth()
     const activeStyle = {
         fontWeight: "bold",
         color: "red"
@@ -22,8 +25,11 @@ const Navigation = () => {
                             Link>
                         <Nav.Link as={NavLink} to="/contact" activeStyle={activeStyle}>Contact</Nav.
                             Link>
-                        <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.
-                            Link>
+                        {
+                            user?.email ? <Button onClick={logOut} variant="contained">Logout</Button> : <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.
+                                Link>
+                        }
+
 
 
                         <Navbar.Text>
