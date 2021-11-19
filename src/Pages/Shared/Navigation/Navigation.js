@@ -5,7 +5,9 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
-    const { user, logOut } = useAuth()
+    const { user, logOut } = useAuth();
+    console.log("hello nab");
+    console.log(user.email);
     const activeStyle = {
         fontWeight: "bold",
         color: "red"

@@ -15,6 +15,7 @@ import Booking from './Pages/Booking/Booking/Booking';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
             </Route>
             <Route path="/booking/:serviceId">
               <Booking></Booking>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
             </Route>
             <Route path="/contact">
               <Contact></Contact>
