@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Link, NavLink } from 'react-router-dom';
 
 const Booking = () => {
     const { serviceId } = useParams();
@@ -27,7 +28,9 @@ const Booking = () => {
                                 <p className="text-danger" >{booking.price}</p>
 
                             </Card.Text>
-                            <button className="btn btn-warning">Add Cart</button>
+                            <NavLink to={`/products/${serviceId}`} className="w-100 btn btn-primary">
+                                Purchase
+                            </NavLink>
                         </Card.Body>
                     </Card>
                 </Col>

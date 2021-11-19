@@ -88,11 +88,12 @@ const useFirebae = () => {
         return () => unsubscribed;
     }, [auth])
 
-    // useEffect(() => {
-    //     fetch(`https://aqueous-inlet-49489.herokuapp.com/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setAdmin(data.admin))
-    // }, [user.email])
+    useEffect(() => {
+        // fetch(`https://aqueous-inlet-49489.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
 
     const logOut = () => {
         setIsLoading(true);

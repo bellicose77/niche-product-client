@@ -8,17 +8,19 @@ const MyOrders = () => {
     const { user } = useAuth();
     // const { user } = allContexts;
     useEffect(() => {
-        axios.get(`https://aqueous-inlet-49489.herokuapp.com/orders/${user.email}`)
+        axios.get(`http://localhost:5000/orders/${user.email}`)
             .then(res => {
                 setMyOrders(res.data);
             });
-    }, [user.email])
+    }, [user.email]);
+    console.log(user.email);
+    console.log(myOrders);
 
 
     const cancelOrder = (id) => {
         const cofirmation = window.confirm('confirm to delete!');
         if (cofirmation) {
-            axios.delete(`https://aqueous-inlet-49489.herokuapp.com/delete/${id}`)
+            axios.delete(`http://localhost:5000/delete/${id}`)
                 .then(res => {
                     if (res.data === 1) {
                         const rest = myOrders.filter(order => order._id !== id);
@@ -45,12 +47,12 @@ const MyOrders = () => {
                 </thead>
                 <tbody>
                     {myOrders?.map(myOrder => {
-                        const { _id, name, title, price, status } = myOrder;
+                        const { _id, name, price, status } = myOrder;
                         return (
                             <tr
                                 key={_id}
                             >
-                                <td className="td">{title}</td>
+
                                 <td className="td">{price}</td>
                                 <td className="text-primary">{status}</td>
                                 <td className="td">{name}</td>

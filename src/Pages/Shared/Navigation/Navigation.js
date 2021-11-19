@@ -28,9 +28,12 @@ const Navigation = () => {
                         <Nav.Link as={NavLink} to="/contact" activeStyle={activeStyle}>Contact</Nav.
                             Link>
                         {
-                            user?.email ? <Button onClick={logOut} variant="contained">Logout</Button> : <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.
-                                Link>
+                            user?.email ? <>
+                                <Button onClick={logOut} variant="contained">Logout</Button>
+                                <Nav.Link as={NavLink} to="/dashboard" activeStyle={activeStyle}>Dashboard</Nav.Link>
+                            </> : <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.Link>
                         }
+
 
 
 

@@ -9,7 +9,7 @@ const UpdateForm = () => {
     const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        const url = `https://aqueous-inlet-49489.herokuapp.com/products/${id}`
+        const url = `http://localhost:5000/details/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -20,7 +20,7 @@ const UpdateForm = () => {
     const handleTilteChange = e => {
         console.log(e.target.value);
         const updateTitle = e.target.value;
-        const updatedService = { title: updateTitle, duration: service.duration, rating: service.rating, description: service.description, price: service.price, img: service.img }
+        const updatedService = { name: updateTitle, description: service.description, price: service.price, img: service.img }
         setService(updatedService)
 
     };
@@ -28,7 +28,7 @@ const UpdateForm = () => {
     const handleDescriptionChange = e => {
         console.log(e.target.value);
         const updateDescription = e.target.value;
-        const updatedService = { title: service.title, duration: service.duration, rating: service.rating, description: updateDescription, price: service.price, img: service.img }
+        const updatedService = { title: service.title, description: updateDescription, price: service.price, img: service.img }
         setService(updatedService)
     };
 
@@ -69,7 +69,7 @@ const UpdateForm = () => {
     const onSubmit = data => {
         console.log(data);
 
-        const url = `https://aqueous-inlet-49489.herokuapp.com/products/${id}`
+        const url = `http://localhost:5000/details/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -96,7 +96,7 @@ const UpdateForm = () => {
             <h1> Update {service?.title} Package</h1>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("title",)} onChange={handleTilteChange} placeholder="Title" value={service.title || ''} />
+                <input {...register("title",)} onChange={handleTilteChange} placeholder="name" value={service.title || ''} />
 
                 <textarea  {...register("description")} placeholder="Description" onChange={handleDescriptionChange} value={service.description || ''} />
 

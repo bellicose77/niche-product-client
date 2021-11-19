@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 const ManageProducts = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('https://aqueous-inlet-49489.herokuapp.com/products')
+        // fetch('https://aqueous-inlet-49489.herokuapp.com/products')
+        fetch('http://localhost:5000/details')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [services])
 
     const handleDelete = id => {
         const confirmation = window.confirm('confirm to delete!');
-        const url = `https://aqueous-inlet-49489.herokuapp.com/products/${id}`;
+        // const url = `https://aqueous-inlet-49489.herokuapp.com/products/${id}`;
+        const url = `http://localhost:5000/details/${id}`;
         if (confirmation) {
             fetch(url, {
                 method: 'DELETE'

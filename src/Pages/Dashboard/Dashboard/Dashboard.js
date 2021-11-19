@@ -61,29 +61,15 @@ function Dashboard(props) {
 
             </Link>
             <br />
-            <Link to={`${url}/manageallorders`}>
-                <Button sx={{ textDecoration: 'none' }} color="inherit">Manage AllOrders</Button>
 
-            </Link>
-            <Link to={`${url}/addservices`}>
-                <Button sx={{ textDecoration: 'none' }} color="inherit">Add Sevices</Button>
 
-            </Link>
-            <br />
             <Link to={`${url}/myorders`}>
                 <Button sx={{ textDecoration: 'none' }} color="inherit">My Orders</Button>
 
             </Link>
             <br />
-            <Link to={`${url}/manageproducts`}>
-                <Button sx={{ textDecoration: 'none' }} color="inherit">Manage Products</Button>
 
-            </Link>
-            <br />
-            <Link to={`${url}/makeadmin`}>
-                <Button sx={{ textDecoration: 'none' }} color="inherit">Make Admin</Button>
 
-            </Link>
             <br />
             <Link to={`${url}/blog`}>
                 <Button sx={{ textDecoration: 'none' }} color="inherit">Blog</Button>
@@ -113,25 +99,31 @@ function Dashboard(props) {
 
             {
                 admin && <Box>
-                    {/* <Link to={`${url}/makeadmin`}>
-                        <Button sx={{ textDecoration: 'none' }} color="inherit">MakeAdmin</Button>
+                    <Link to={`${url}/makeadmin`}>
+                        <Button sx={{ textDecoration: 'none' }} color="inherit">Make Admin</Button>
 
-                    </Link> */}
-                    <Link to={`${url}/adddoctor`}>
-                        <Button sx={{ textDecoration: 'none' }} color="inherit">AddDoctor</Button></Link>
+                    </Link>
+                    <br />
+                    <Link to={`${url}/manageproducts`}>
+                        <Button sx={{ textDecoration: 'none' }} color="inherit">Manage Products</Button>
+
+                    </Link>
+                    <br />
+                    <Link to={`${url}/addservices`}>
+                        <Button sx={{ textDecoration: 'none' }} color="inherit">Add Sevices</Button>
+
+                    </Link>
+                    <br />
+                    <Link to={`${url}/manageallorders`}>
+                        <Button sx={{ textDecoration: 'none' }} color="inherit">Manage AllOrders</Button>
+
+                    </Link>
+                    <br />
+
 
                 </Box>
             }
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
+
 
         </div >
     );

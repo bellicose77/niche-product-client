@@ -16,6 +16,10 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import PlaceOrder from './Pages/Dashboard/PlaceOrder/PlaceOrder';
+import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
+import UpdateForm from './Pages/Dashboard/UpdateForm/UpdateForm';
 
 function App() {
   return (
@@ -44,14 +48,23 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/booking/:serviceId">
+            <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/products/:id">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
             <Route path="/dashboard">
               <Dashboard></Dashboard>
             </Route>
             <Route path="/contact">
               <Contact></Contact>
+            </Route>
+            <Route path="/updateForm/:id">
+              <UpdateForm></UpdateForm>
+            </Route>
+            <Route path="/myorders">
+              <MyOrders></MyOrders>
             </Route>
           </Switch>
         </Router>

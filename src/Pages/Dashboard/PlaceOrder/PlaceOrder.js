@@ -18,7 +18,7 @@ const PlaceOrder = () => {
  const { id } = useParams();
 
  useEffect(() => {
-  axios.get(`https://aqueous-inlet-49489.herokuapp.com/products/${id}`)
+  axios.get(`http://localhost:5000/details/${id}`)
    .then(res => {
     const gotProduct = res.data;
     setProduct(gotProduct);
@@ -49,14 +49,14 @@ const PlaceOrder = () => {
    status: "Pending",
   };
   // console.log(ordered)
-  axios.post("https://aqueous-inlet-49489.herokuapp.com/book", ordered)
+  axios.post("http://localhost:5000/book", ordered)
    // console.log('clicked')
    .then((res) => {
     const response = res.data;
     console.log(res)
     if (response) {
      alert("Successfully purchase the product!");
-     history.push("/myOrders");
+     history.push("/myorders");
     } else {
      alert("something went wrong!!");
     }
